@@ -346,7 +346,8 @@
 
                 photoMeshes.forEach((mesh, i) => {
                     mesh.visible = true;
-                    const angle = baseAngle + i * angleStep;
+                    const autoRotateSpeed = 0.4; // chậm, dễ xem
+                    const angle = baseAngle + time * autoRotateSpeed + i * angleStep;
                     const x = Math.sin(angle) * CONFIG.photoOrbitRadius;
                     const z = Math.cos(angle) * CONFIG.photoOrbitRadius;
                     const y = Math.sin(time + i) * 3; 
@@ -445,3 +446,4 @@
 </body>
 
 </html>
+
